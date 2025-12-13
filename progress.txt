@@ -219,3 +219,13 @@
   - 트리 뷰 주요 UI로 배치
   - 선택 상태 저장/복원
 
+---
+
+## [2025-12-13] Coding Session 9
+- [COMPLETED] F035-F038: Indexing Page Enhancement (`src/ui/indexing_page.py`)
+  - F035: CheckableFolderModel with tristate checkboxes
+  - F036: "기타 파일(메타데이터만)" checkbox added
+  - F037: Real-time file count summary
+  - F038: Complete layout redesign with tree view
+  - Import test ✅
+
