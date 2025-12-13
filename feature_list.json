@@ -408,5 +408,55 @@
             "네트워크 호출 차단/탐지"
         ],
         "passes": true
+    },
+    {
+        "id": "F035",
+        "sprint": 7,
+        "pr": "PR#35",
+        "category": "ui-enhancement",
+        "description": "Folder Tree View with Checkboxes",
+        "steps": [
+            "QFileSystemModel 기반 트리 뷰 구현",
+            "체크박스 다중 선택 (tristate 지원)",
+            "부모 선택 시 자식 자동 선택"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F036",
+        "sprint": 7,
+        "pr": "PR#36",
+        "category": "ui-enhancement",
+        "description": "Metadata-Only File Type Filter",
+        "steps": [
+            "기타 파일(메타데이터만) 체크박스 추가",
+            "인덱서와 필터 옵션 연동"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F037",
+        "sprint": 7,
+        "pr": "PR#37",
+        "category": "ui-enhancement",
+        "description": "Real-time File Count Display",
+        "steps": [
+            "폴더별 파일 수 표시",
+            "선택 폴더 총합 (총 파일 수 / 콘텐츠 대상 수)"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F038",
+        "sprint": 7,
+        "pr": "PR#38",
+        "category": "ui-enhancement",
+        "description": "Indexing Page Layout Redesign",
+        "steps": [
+            "트리 뷰 주요 UI로 배치",
+            "선택 상태 저장/복원",
+            "인덱서 연동 테스트"
+        ],
+        "passes": false
     }
 ]

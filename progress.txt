@@ -198,3 +198,24 @@
 - Completed: 34 (100%)
 - Git Commits: 8
 - Lines of Code: ~5000+
+
+---
+
+## 🔜 Sprint 7: UI Enhancement (v2.1)
+
+### PRD 기반 Indexing Page 개선 작업
+
+- [ ] F035: Folder Tree View with Checkboxes
+  - QFileSystemModel 기반 트리 뷰
+  - 체크박스 다중 선택 (tristate)
+  - 부모 선택 시 자식 자동 선택
+- [ ] F036: Metadata-Only File Type Filter
+  - "기타 파일(메타데이터만)" 체크박스 추가
+  - 인덱서와 필터 연동
+- [ ] F037: Real-time File Count Display
+  - 폴더별 파일 수 표시
+  - 총 파일 수 / 콘텐츠 대상 수
+- [ ] F038: Indexing Page Layout Redesign
+  - 트리 뷰 주요 UI로 배치
+  - 선택 상태 저장/복원
+
