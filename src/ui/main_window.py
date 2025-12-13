@@ -260,10 +260,48 @@ def run_app():
         print("PyQt6 is not installed. Install with: pip install PyQt6")
         return 1
     
+    import json
+    from pathlib import Path
+    
     app = create_app()
+    
+    # Check for first run
+    settings_dir = Path.home() / ".local-finder-x"
+    settings_file = settings_dir / "settings.json"
+    
+    first_run = True
+    if settings_file.exists():
+        try:
+            with open(settings_file, "r") as f:
+                settings = json.load(f)
+                first_run = not settings.get("first_run_complete", False)
+        except:
+            pass
+    
+    # Show setup wizard on first run
+    if first_run:
+        try:
+            from src.ui.setup_wizard import SetupWizard
+            wizard = SetupWizard()
+            
+            def on_setup_complete(settings_data):
+                # Save settings
+                settings_dir.mkdir(parents=True, exist_ok=True)
+                with open(settings_file, "w") as f:
+                    json.dump(settings_data, f, indent=2)
+            
+            wizard.setup_complete.connect(on_setup_complete)
+            result = wizard.exec()
+            
+            if result == 0:  # User cancelled
+                return 0
+        except ImportError as e:
+            print(f"Setup wizard not available: {e}")
+    
     window = MainWindow()
     window.show()
     return app.exec()
+
 
 
 __all__ = [
