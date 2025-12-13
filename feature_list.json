@@ -157,7 +157,7 @@
             "manifest 기반 증분 인덱싱",
             "FileRecord/ChunkRecord 생성 및 Storage 기록"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F014",
@@ -169,7 +169,7 @@
             "query embedding 생성",
             "VectorStore topN chunk 검색"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F015",
@@ -182,7 +182,7 @@
             "BM25 topN 검색",
             "metadata-only 파일 file-level 검색"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F016",
@@ -194,7 +194,7 @@
             "RRF 수식 구현 (k=60)",
             "Dense/Lexical 결과 결합"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F017",
@@ -206,7 +206,7 @@
             "file_score 공식 구현",
             "metadata-only 0.4 감쇠 적용"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F018",
@@ -218,7 +218,7 @@
             "file별 top evidences 선택",
             "snippet 하이라이트 생성"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F019",
@@ -229,7 +229,7 @@
         "steps": [
             "QueryProcessor → Retrievers → Fusion → Aggregator → Evidence → SearchResponse"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F020",

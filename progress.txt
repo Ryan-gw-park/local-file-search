@@ -114,3 +114,21 @@
 ## Next Session TODO
 - [ ] F013: Indexing Orchestrator (Controller)
 - [ ] F014: Dense Retriever
+
+---
+
+## [2025-12-13] Coding Session 6
+- [COMPLETED] F013: Indexing Orchestrator (`src/core/indexer.py`)
+  - Full pipeline: enumerate → extract → chunk → embed → store
+  - Incremental indexing with manifest
+  - All tests passed ✅
+- [COMPLETED] F014-F019: Search Engine (`src/core/search_engine.py`)
+  - Dense Retriever (vector similarity)
+  - Lexical Retriever (BM25)
+  - RRF Fusion (k=60)
+  - Evidence Builder
+  - SearchEngine (end-to-end)
+  - All tests passed ✅
+
+## Next Session TODO
+- [ ] Sprint 4: UI (F020-F027)
