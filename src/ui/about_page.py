@@ -1,12 +1,12 @@
 """
 Local Finder X v2.0 - About Page
 
-Application information and credits.
+Comprehensive product information (restored from v1).
 """
 
 try:
     from PyQt6.QtWidgets import (
-        QWidget, QVBoxLayout, QLabel, QFrame, QHBoxLayout
+        QWidget, QVBoxLayout, QLabel, QFrame, QScrollArea, QTextEdit
     )
     from PyQt6.QtCore import Qt
     PYQT6_AVAILABLE = True
@@ -21,11 +21,18 @@ QFrame.card {
     border-radius: 12px;
     padding: 20px;
 }
+
+QTextEdit {
+    background-color: #1e1e32;
+    border: none;
+    color: #ffffff;
+    font-size: 14px;
+}
 """
 
 
 class AboutPage(QWidget if PYQT6_AVAILABLE else object):
-    """About page with application information."""
+    """About page with comprehensive product information (v1 content)."""
     
     def __init__(self, parent=None):
         if not PYQT6_AVAILABLE:
@@ -34,63 +41,78 @@ class AboutPage(QWidget if PYQT6_AVAILABLE else object):
         self.setStyleSheet(ABOUT_STYLE)
         
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(50, 50, 50, 50)
-        layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.setContentsMargins(30, 30, 30, 30)
         
-        # Card container
-        card = QFrame()
-        card.setProperty("class", "card")
-        card.setMaximumWidth(600)
-        card_layout = QVBoxLayout(card)
-        card_layout.setSpacing(15)
+        # About content in QTextEdit for rich formatting
+        about_text = QTextEdit()
+        about_text.setReadOnly(True)
         
-        # Logo/Title
-        title = QLabel("🔍 Local Finder X")
-        title.setStyleSheet("color: #ffffff; font-size: 32px; font-weight: bold;")
-        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        card_layout.addWidget(title)
+        content = """
+        <h2>🛠 Why This Product Exists</h2>
+        <p>In a cloud-first, AI-driven era, the daily struggles of office workers bound to Windows, 
+        MS Office files, shared drives, and strict corporate networks are still largely ignored.</p>
         
-        version = QLabel("Version 2.0")
-        version.setStyleSheet("color: #6366f1; font-size: 16px;")
-        version.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        card_layout.addWidget(version)
+        <p>As someone who constantly had to trace the context of ever-changing file versions—remembering 
+        which draft contained what, and endlessly digging through folders—I built the solution I personally needed: 
+        <b>a fully local, offline, enterprise-safe AI search engine</b> that finally makes finding the right file effortless.</p>
         
-        # Description
-        desc = QLabel(
-            "설명 가능한 하이브리드 로컬 검색 엔진\n\n"
-            "Local Finder X는 MS Office 문서, PDF, Markdown 등\n"
-            "로컬 파일을 AI 기반으로 검색하고,\n"
-            "왜 해당 파일이 검색되었는지 근거를 제시합니다."
-        )
-        desc.setStyleSheet("color: #ccccdd; font-size: 14px; line-height: 1.6;")
-        desc.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        card_layout.addWidget(desc)
+        <hr>
         
-        # Features
-        features_label = QLabel("주요 기능")
-        features_label.setStyleSheet("color: #ffffff; font-size: 16px; font-weight: bold; margin-top: 20px;")
-        card_layout.addWidget(features_label)
+        <h2>🎯 About</h2>
+        <p>A semantic AI file search tool designed specifically for corporate environments where:</p>
+        <ul>
+            <li>Files live on Windows PCs, network drives, and legacy folder structures</li>
+            <li>Cloud search tools cannot be used due to privacy or IT restrictions</li>
+            <li>AI models must run locally with no external data transmission</li>
+            <li>MS Office–centric workflows generate endless versions and duplicates</li>
+        </ul>
+        <p>Local AI File Search overcomes these constraints by providing on-device semantic understanding, 
+        enabling fast, accurate discovery of documents purely within the local environment—no cloud dependency, no policy conflicts.</p>
         
-        features = [
-            "🔒 완전 오프라인 - 파일 정보가 외부로 전송되지 않음",
-            "⚡ 하이브리드 검색 - Dense + BM25 + RRF 융합",
-            "📊 근거 제시 - 검색 결과에 대한 명확한 설명",
-            "📁 다양한 형식 - docx, xlsx, pptx, pdf, md 지원",
-        ]
+        <hr>
         
-        for feature in features:
-            feat_label = QLabel(f"  {feature}")
-            feat_label.setStyleSheet("color: #aaaacc; font-size: 13px; padding: 3px 0;")
-            card_layout.addWidget(feat_label)
+        <h2>⭐ Key Differentiators</h2>
+        <ul>
+            <li><b>Semantic Search:</b> Understands content, not just filenames</li>
+            <li><b>Windows & Office Optimized:</b> Built for E-MAIL, DOCX, XLSX, PPTX, PDF-heavy workflows</li>
+            <li><b>Local-Only Operation:</b> Works entirely offline in secure corporate networks</li>
+            <li><b>Version-Chaos Relief:</b> Instantly finds the correct draft among duplicates</li>
+            <li><b>IT-Friendly:</b> Safe, deterministic, and compliant with strict corporate policies</li>
+        </ul>
         
-        # Copyright
-        copyright_label = QLabel("© 2025 Local Finder X. All rights reserved.")
-        copyright_label.setStyleSheet("color: #666680; font-size: 11px; margin-top: 30px;")
-        copyright_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        card_layout.addWidget(copyright_label)
+        <hr>
         
-        layout.addWidget(card)
-        layout.addStretch()
+        <h2>🔐 Security & Privacy</h2>
+        <ul>
+            <li><b>100% Offline Operation:</b> No cloud access, no telemetry, no external communication</li>
+            <li><b>Local-Only Search:</b> Even cloud-origin files (email attachments, cloud drive documents) are searched only after they exist on your local disk — no online indexing, no server-side activity</li>
+            <li><b>Local Storage Only:</b> All embeddings and indexes remain entirely on your device</li>
+            <li><b>Read-Only Access:</b> Never modifies, moves, or deletes any files</li>
+            <li><b>Local LLM:</b> The AI model runs fully on-device</li>
+            <li><b>Inference-Only Model:</b> The LLM does not learn from, store, or train on your files — it performs search and ranking only</li>
+        </ul>
+        
+        <hr>
+        
+        <h2>🧠 AI Model</h2>
+        <ul>
+            <li><b>Model:</b> all-MiniLM-L6-v2</li>
+            <li>Lightweight, high-accuracy semantic embedding model</li>
+            <li>Multilingual support (including Korean & English)</li>
+            <li>Runs fully on-device without GPU or internet</li>
+        </ul>
+        
+        <hr>
+        
+        <h2>📞 Contact</h2>
+        <p>Email: <a href="mailto:backnine.works@gmail.com" style="color: #6366f1;">backnine.works@gmail.com</a></p>
+        
+        <br>
+        <p style="color: #666680; font-size: 12px;">© 2025 Local Finder X. All rights reserved. Version 2.0</p>
+        """
+        
+        about_text.setHtml(content)
+        layout.addWidget(about_text)
 
 
 __all__ = ["AboutPage"]
