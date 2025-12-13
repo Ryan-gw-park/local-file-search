@@ -205,19 +205,11 @@
 
 ### PRD 기반 Indexing Page 개선 작업
 
-- [ ] F035: Folder Tree View with Checkboxes
-  - QFileSystemModel 기반 트리 뷰
-  - 체크박스 다중 선택 (tristate)
-  - 부모 선택 시 자식 자동 선택
-- [ ] F036: Metadata-Only File Type Filter
-  - "기타 파일(메타데이터만)" 체크박스 추가
-  - 인덱서와 필터 연동
-- [ ] F037: Real-time File Count Display
-  - 폴더별 파일 수 표시
-  - 총 파일 수 / 콘텐츠 대상 수
-- [ ] F038: Indexing Page Layout Redesign
-  - 트리 뷰 주요 UI로 배치
-  - 선택 상태 저장/복원
+- [x] ~~F035: Folder Tree View with Checkboxes~~ (DEPRECATED → F039)
+- [x] F036: Metadata-Only File Type Filter
+- [x] F037: Real-time File Count Display
+- [x] F038: Indexing Page Layout Redesign
+- [/] F039: Simplified Folder List (Option B) ← NEW
 
 ---
 
@@ -228,4 +220,38 @@
   - F037: Real-time file count summary
   - F038: Complete layout redesign with tree view
   - Import test ✅
+
+---
+
+## [2025-12-13] Coding Session 10
+- [ISSUE] Indexing Page UI 문제 발견
+  - 폴더 트리 UI 멈춤 (os.walk 블로킹)
+  - 클라우드 폴더 오탐 (Google Drive false positive)
+  - Summary 레이블 중첩 문제
+- [DECISION] Option B로 전환 결정
+  - 복잡한 트리 뷰 → 간소화된 폴더 리스트
+
+---
+
+## [2025-12-13] Coding Session 11
+- [COMPLETED] F039: Simplified Folder List Implementation
+  - FolderListWidget 구현 (QListWidget 기반)
+  - 폴더 추가: QFileDialog로 선택
+  - 폴더 삭제: 개별 삭제 버튼
+  - CheckableFolderModel 제거
+  - 클라우드 감지 로직 제거
+  - Import test ✅
+
+---
+
+## [2025-12-13] Coding Session 12
+- [COMPLETED] F040: Pro Mode UI (`src/ui/indexing_page.py`)
+  - Outlook 이메일 체크박스 [PRO] 표시
+  - 클라우드 섹션 (OneDrive) 추가
+  - 인덱싱 진행 인디케이터 개선 (파일수/경과시간/넛지)
+  - Free 모드에서 잠금 및 업그레이드 안내
+- [COMPLETED] F041: About Page v1 Restore (`src/ui/about_page.py`)
+  - Why Product Exists / About / Key Differentiators
+  - Security & Privacy (6가지 보안 항목)
+  - AI Model / Contact 정보
 
