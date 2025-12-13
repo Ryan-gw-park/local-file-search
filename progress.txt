@@ -132,3 +132,32 @@
 
 ## Next Session TODO
 - [ ] Sprint 4: UI (F020-F027)
+
+---
+
+## [2025-12-13] Coding Session 7
+- [COMPLETED] F020: Main Window (`src/ui/main_window.py`)
+  - Global Sidebar with navigation
+  - Page switching (Search, Indexing, About, MyPage)
+  - Import OK ✅
+- [COMPLETED] F021-F024: Search Page 3-Panel (`src/ui/search_page.py`)
+  - Left Panel: Results list with badges
+  - Center Panel: Evidence cards
+  - Right Panel: Query input with mode selector
+  - Import OK ✅
+- [COMPLETED] F025: Indexing Page (`src/ui/indexing_page.py`)
+  - Folder selection tree
+  - File type filters
+  - Progress bar
+  - Import OK ✅
+- [COMPLETED] F026: About Page (`src/ui/about_page.py`)
+  - App info and features
+  - Import OK ✅
+- [COMPLETED] F027: My Page (`src/ui/mypage.py`)
+  - License key input
+  - Scope summary (Free/Pro)
+  - Import OK ✅
+
+## Next Session TODO
+- [ ] Sprint 5: Pro Features (F028-F032)
+- [ ] Sprint 6: Packaging (F033-F034)

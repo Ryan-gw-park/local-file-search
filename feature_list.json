@@ -240,7 +240,7 @@
         "steps": [
             "Search/Indexing/About/MyPage 전환 구현"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F021",
@@ -252,7 +252,7 @@
             "좌/중/우 레이아웃 고정",
             "Right 패널 입력 이벤트 연결"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F022",
@@ -264,7 +264,7 @@
             "FileHit 리스트 렌더",
             "content availability 배지 표시"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F023",
@@ -276,7 +276,7 @@
             "Evidence 카드 리스트",
             "Copy/Ask 버튼 이벤트"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F024",
@@ -289,7 +289,7 @@
             "모드 토글 (FAST/SMART/ASSIST)",
             "필터 팝오버"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F025",
@@ -302,7 +302,7 @@
             "폴더 트리 체크 UI",
             "인덱싱 실행 버튼/진행 표시/결과 요약"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F026",
@@ -313,7 +313,7 @@
         "steps": [
             "기존 About 내용 이관"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F027",
@@ -326,7 +326,7 @@
             "Free/Pro 상태 표시",
             "스코프 요약 표시"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F028",
