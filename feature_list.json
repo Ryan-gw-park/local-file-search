@@ -121,7 +121,7 @@
             "파일 타입별 청킹 규칙 구현",
             "위치 메타데이터 생성"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F011",
@@ -133,7 +133,7 @@
             "Kiwi 한국어 토큰 추출",
             "영어 토큰 추출 (fallback)"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F012",
@@ -145,7 +145,7 @@
             "SentenceTransformer 래퍼",
             "디바이스 자동 선택 (CUDA/MPS/CPU)"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F013",

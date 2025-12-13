@@ -94,3 +94,23 @@
 - [ ] F010: Structural Chunker
 - [ ] F011: Tokenizer (Kiwi + English)
 - [ ] F012: Embedding Model Wrapper
+
+---
+
+## [2025-12-13] Coding Session 5
+- [COMPLETED] F010: Structural Chunker (`src/core/chunker.py`)
+  - File-type-specific chunking (PDF, PPT, Excel, Word/MD)
+  - Location metadata (page, slide, sheet, header_path)
+  - All tests passed ✅
+- [COMPLETED] F011: Tokenizer (`src/core/tokenizer.py`)
+  - Korean (Kiwi) + English tokenization
+  - Smart language detection
+  - Import OK ✅ (kiwipiepy optional)
+- [COMPLETED] F012: Embedding Model (`src/core/embedding.py`)
+  - Singleton wrapper for SentenceTransformer
+  - Device auto-detection (CUDA/MPS/CPU)
+  - Import OK ✅ (sentence-transformers optional)
+
+## Next Session TODO
+- [ ] F013: Indexing Orchestrator (Controller)
+- [ ] F014: Dense Retriever
