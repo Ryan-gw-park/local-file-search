@@ -72,3 +72,25 @@
 ## Next Session TODO
 - [ ] F007: File Enumeration + Filtering
 - [ ] F008: File Type Classifier
+
+---
+
+## [2025-12-13] Coding Session 4
+- [COMPLETED] F007: File Enumerator (`src/core/file_enumerator.py`)
+  - Directory traversal with skip rules
+  - EnumerationOptions for filtering
+  - All tests passed ✅
+- [COMPLETED] F008: File Classifier (`src/core/file_classifier.py`)
+  - Content-Indexed vs Metadata-Only classification
+  - FileCategory and FileType enums
+  - All tests passed ✅
+- [COMPLETED] F009: Extractors (`src/core/extractors/`)
+  - WordExtractor, ExcelExtractor, PowerPointExtractor
+  - PDFExtractor, TextExtractor, MarkdownExtractor
+  - Registry pattern for extractor lookup
+  - All imports OK ✅
+
+## Next Session TODO
+- [ ] F010: Structural Chunker
+- [ ] F011: Tokenizer (Kiwi + English)
+- [ ] F012: Embedding Model Wrapper

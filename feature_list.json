@@ -83,7 +83,7 @@
             "폴더 트리에서 파일 목록 생성",
             "임시 파일 제외 규칙 적용"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F008",
@@ -94,7 +94,7 @@
         "steps": [
             "확장자 기반 content_indexed 결정"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F009",
@@ -109,7 +109,7 @@
             "PDF 추출기",
             "Markdown 추출기"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F010",
