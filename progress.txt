@@ -1,0 +1,38 @@
+# Local Finder X v2.0 Progress Log
+
+> This file tracks the progress of development sessions.
+> AI agents should read this file at the start of each session to understand the current state.
+
+---
+
+## [2025-12-13] Initializer Session
+- [COMPLETED] Folder restructure: v1 code archived to `_archive_v1/`, docs moved to `docs/`
+- [COMPLETED] Created `init.sh` (environment setup script)
+- [COMPLETED] Created `progress.txt` (this file)
+- [COMPLETED] Created `feature_list.json` (Master Plan Phase 6 기반)
+- [COMPLETED] Created `pyproject.toml` (dependency management)
+- [COMPLETED] Created `src/` folder structure (Phase 1 Architecture)
+- [PENDING] Git initial commit
+
+---
+
+## Next Session TODO
+- [ ] PR#1: App Data Paths & Settings (`src/config/paths.py`, `src/config/settings.py`)
+- [ ] PR#2: Data Schemas (FileRecord, ChunkRecord, Evidence, SearchResponse)
+
+---
+
+## [2025-12-13] Coding Session 1
+- [COMPLETED] F001: App Data Paths (`src/config/paths.py`)
+  - OS-specific paths for Windows/macOS/Linux
+  - get_app_data_dir(), get_lancedb_path(), etc.
+- [COMPLETED] F002: Settings Manager (`src/config/settings.py`)
+  - Dataclass-based settings with JSON persistence
+  - IndexingSettings, SearchSettings, UISettings, LicenseSettings
+- [COMPLETED] F002: Data Schemas (`src/core/schemas.py`)
+  - FileRecord, ChunkRecord, Evidence, SearchResponse
+  - All tests passed ✅
+
+## Next Session TODO
+- [ ] F003: Manifest Store (incremental indexing)
+- [ ] F004: LanceDB Setup & Schema

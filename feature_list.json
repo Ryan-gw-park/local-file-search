@@ -1,0 +1,412 @@
+[
+    {
+        "id": "F001",
+        "sprint": 1,
+        "pr": "PR#1",
+        "category": "storage",
+        "description": "App Data Paths & Settings",
+        "steps": [
+            "src/config/paths.py: OS별 앱 데이터 경로 결정",
+            "src/config/settings.py: settings.json load/save"
+        ],
+        "passes": true
+    },
+    {
+        "id": "F002",
+        "sprint": 1,
+        "pr": "PR#2",
+        "category": "storage",
+        "description": "Data Schemas (DTO/Models)",
+        "steps": [
+            "FileRecord dataclass 정의",
+            "ChunkRecord dataclass 정의",
+            "Evidence dataclass 정의",
+            "SearchResponse dataclass 정의"
+        ],
+        "passes": true
+    },
+    {
+        "id": "F003",
+        "sprint": 1,
+        "pr": "PR#3",
+        "category": "storage",
+        "description": "Manifest Store (Incremental Indexing)",
+        "steps": [
+            "manifest.json load/save",
+            "fingerprint 비교 함수 구현"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F004",
+        "sprint": 1,
+        "pr": "PR#4",
+        "category": "storage",
+        "description": "LanceDB Setup & Schema",
+        "steps": [
+            "src/storage/lancedb_store.py 생성",
+            "LanceDB connect & Table create"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F005",
+        "sprint": 1,
+        "pr": "PR#5",
+        "category": "storage",
+        "description": "VectorStore Adapter",
+        "steps": [
+            "LanceDB wrapper (add, search, delete)",
+            "metadata 필터링 쿼리 동작 확인"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F006",
+        "sprint": 1,
+        "pr": "PR#6",
+        "category": "storage",
+        "description": "BM25Store (Persistent)",
+        "steps": [
+            "토큰 리스트 기반 BM25 인덱스 생성",
+            "저장/로드 기능"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F007",
+        "sprint": 2,
+        "pr": "PR#7",
+        "category": "indexing",
+        "description": "File Enumeration + Filtering",
+        "steps": [
+            "폴더 트리에서 파일 목록 생성",
+            "임시 파일 제외 규칙 적용"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F008",
+        "sprint": 2,
+        "pr": "PR#8",
+        "category": "indexing",
+        "description": "File Type Classifier",
+        "steps": [
+            "확장자 기반 content_indexed 결정"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F009",
+        "sprint": 2,
+        "pr": "PR#9",
+        "category": "indexing",
+        "description": "Extractors (docx, pptx, xlsx, pdf, md)",
+        "steps": [
+            "Word 추출기",
+            "PowerPoint 추출기",
+            "Excel 추출기",
+            "PDF 추출기",
+            "Markdown 추출기"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F010",
+        "sprint": 2,
+        "pr": "PR#10",
+        "category": "indexing",
+        "description": "Structural Chunker",
+        "steps": [
+            "파일 타입별 청킹 규칙 구현",
+            "위치 메타데이터 생성"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F011",
+        "sprint": 2,
+        "pr": "PR#11",
+        "category": "indexing",
+        "description": "Tokenizer (Kiwi + English)",
+        "steps": [
+            "Kiwi 한국어 토큰 추출",
+            "영어 토큰 추출 (fallback)"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F012",
+        "sprint": 2,
+        "pr": "PR#12",
+        "category": "indexing",
+        "description": "Embedding Model Wrapper",
+        "steps": [
+            "SentenceTransformer 래퍼",
+            "디바이스 자동 선택 (CUDA/MPS/CPU)"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F013",
+        "sprint": 2,
+        "pr": "PR#13",
+        "category": "indexing",
+        "description": "Indexing Orchestrator (Controller)",
+        "steps": [
+            "manifest 기반 증분 인덱싱",
+            "FileRecord/ChunkRecord 생성 및 Storage 기록"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F014",
+        "sprint": 3,
+        "pr": "PR#14",
+        "category": "search",
+        "description": "Dense Retriever",
+        "steps": [
+            "query embedding 생성",
+            "VectorStore topN chunk 검색"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F015",
+        "sprint": 3,
+        "pr": "PR#15",
+        "category": "search",
+        "description": "Lexical Retriever (BM25)",
+        "steps": [
+            "query tokens 생성",
+            "BM25 topN 검색",
+            "metadata-only 파일 file-level 검색"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F016",
+        "sprint": 3,
+        "pr": "PR#16",
+        "category": "search",
+        "description": "RRF Fusion (File-level)",
+        "steps": [
+            "RRF 수식 구현 (k=60)",
+            "Dense/Lexical 결과 결합"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F017",
+        "sprint": 3,
+        "pr": "PR#17",
+        "category": "search",
+        "description": "File Aggregator + Score Decay",
+        "steps": [
+            "file_score 공식 구현",
+            "metadata-only 0.4 감쇠 적용"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F018",
+        "sprint": 3,
+        "pr": "PR#18",
+        "category": "search",
+        "description": "Evidence Builder",
+        "steps": [
+            "file별 top evidences 선택",
+            "snippet 하이라이트 생성"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F019",
+        "sprint": 3,
+        "pr": "PR#19",
+        "category": "search",
+        "description": "SearchEngine (End-to-End)",
+        "steps": [
+            "QueryProcessor → Retrievers → Fusion → Aggregator → Evidence → SearchResponse"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F020",
+        "sprint": 4,
+        "pr": "PR#20",
+        "category": "ui",
+        "description": "Main Window + Global Sidebar Routing",
+        "steps": [
+            "Search/Indexing/About/MyPage 전환 구현"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F021",
+        "sprint": 4,
+        "pr": "PR#21",
+        "category": "ui",
+        "description": "Search Page (3-Panel Skeleton)",
+        "steps": [
+            "좌/중/우 레이아웃 고정",
+            "Right 패널 입력 이벤트 연결"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F022",
+        "sprint": 4,
+        "pr": "PR#22",
+        "category": "ui",
+        "description": "Left Panel (Results List)",
+        "steps": [
+            "FileHit 리스트 렌더",
+            "content availability 배지 표시"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F023",
+        "sprint": 4,
+        "pr": "PR#23",
+        "category": "ui",
+        "description": "Center Panel (Evidence Cards)",
+        "steps": [
+            "Evidence 카드 리스트",
+            "Copy/Ask 버튼 이벤트"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F024",
+        "sprint": 4,
+        "pr": "PR#24",
+        "category": "ui",
+        "description": "Right Panel (Chat-like UX)",
+        "steps": [
+            "히스토리 표시",
+            "모드 토글 (FAST/SMART/ASSIST)",
+            "필터 팝오버"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F025",
+        "sprint": 4,
+        "pr": "PR#25",
+        "category": "ui",
+        "description": "Indexing Page",
+        "steps": [
+            "파일 타입 필터 UI",
+            "폴더 트리 체크 UI",
+            "인덱싱 실행 버튼/진행 표시/결과 요약"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F026",
+        "sprint": 4,
+        "pr": "PR#26",
+        "category": "ui",
+        "description": "About Page",
+        "steps": [
+            "기존 About 내용 이관"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F027",
+        "sprint": 4,
+        "pr": "PR#27",
+        "category": "ui",
+        "description": "My Page",
+        "steps": [
+            "라이선스 입력",
+            "Free/Pro 상태 표시",
+            "스코프 요약 표시"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F028",
+        "sprint": 5,
+        "pr": "PR#28",
+        "category": "pro",
+        "description": "Outlook Connector (Graph API)",
+        "steps": [
+            "Azure App 인증 (OAuth 2.0 PKCE)",
+            "MS Graph API Client 구현"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F029",
+        "sprint": 5,
+        "pr": "PR#29",
+        "category": "pro",
+        "description": "OneDrive/SharePoint Connector (Graph API)",
+        "steps": [
+            "Graph API drive/root/children 탐색 구현"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F030",
+        "sprint": 5,
+        "pr": "PR#30",
+        "category": "pro",
+        "description": "Google Drive Button (UI Only)",
+        "steps": [
+            "버튼/상태 UI만 제공",
+            "클릭 시 v2.1 예정 안내"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F031",
+        "sprint": 5,
+        "pr": "PR#31",
+        "category": "security",
+        "description": "PII Masking (Display Stage)",
+        "steps": [
+            "전화/이메일/주민번호 마스킹"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F032",
+        "sprint": 5,
+        "pr": "PR#32",
+        "category": "security",
+        "description": "Audit Log (Pro)",
+        "steps": [
+            "검색 이벤트 JSONL 기록",
+            "query hash 저장"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F033",
+        "sprint": 6,
+        "pr": "PR#33",
+        "category": "packaging",
+        "description": "Packaging Scripts (PyInstaller)",
+        "steps": [
+            "Windows/macOS 빌드 스크립트",
+            "오프라인 모델 번들링"
+        ],
+        "passes": false
+    },
+    {
+        "id": "F034",
+        "sprint": 6,
+        "pr": "PR#34",
+        "category": "packaging",
+        "description": "Offline Guardrail",
+        "steps": [
+            "네트워크 호출 차단/탐지"
+        ],
+        "passes": false
+    }
+]

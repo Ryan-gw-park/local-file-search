@@ -1,0 +1,14 @@
+{
+  "indexing": {
+    "performance_mode": "balanced",
+    "parallel_workers": 2,
+    "skip_large_files": true,
+    "max_file_size_mb": 50,
+    "use_auto_tuning": false,
+    "excel": {
+      "limit_rows": true,
+      "max_rows_per_sheet": 5000,
+      "skip_raw_like_sheets": true
+    }
+  }
+}
