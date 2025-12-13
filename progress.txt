@@ -54,3 +54,21 @@
 ## Next Session TODO
 - [ ] F005: VectorStore Adapter (wrapper for LanceDB)
 - [ ] F006: BM25Store (persistent lexical index)
+
+---
+
+## [2025-12-13] Coding Session 3
+- [COMPLETED] F005: VectorStore Adapter (`src/storage/vector_store.py`)
+  - High-level wrapper for LanceDB
+  - add_chunk(s), search, delete_by_file
+  - Handles ChunkRecord serialization
+  - Import OK ✅
+- [COMPLETED] F006: BM25Store (`src/storage/bm25_store.py`)
+  - Persistent BM25 index with pickle
+  - Supports chunk-level and file-level tokens
+  - add_document(s), search, remove_by_file
+  - Import OK ✅ (rank_bm25 dependency optional)
+
+## Next Session TODO
+- [ ] F007: File Enumeration + Filtering
+- [ ] F008: File Type Classifier
