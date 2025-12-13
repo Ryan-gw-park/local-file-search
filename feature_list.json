@@ -35,7 +35,7 @@
             "manifest.json load/save",
             "fingerprint 비교 함수 구현"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F004",
@@ -47,7 +47,7 @@
             "src/storage/lancedb_store.py 생성",
             "LanceDB connect & Table create"
         ],
-        "passes": false
+        "passes": true
     },
     {
         "id": "F005",

@@ -36,3 +36,21 @@
 ## Next Session TODO
 - [ ] F003: Manifest Store (incremental indexing)
 - [ ] F004: LanceDB Setup & Schema
+
+---
+
+## [2025-12-13] Coding Session 2
+- [COMPLETED] F003: Manifest Store (`src/storage/manifest.py`)
+  - FileFingerprint, Manifest dataclasses
+  - ManifestStore singleton with load/save
+  - compare_fingerprint(), get_files_to_reindex(), get_deleted_files()
+  - All tests passed ✅
+- [COMPLETED] F004: LanceDB Store (`src/storage/lancedb_store.py`)
+  - Schema definition (chunks, files tables)
+  - LanceDBStore class with vector search
+  - add_chunks, search_chunks, delete_chunks_by_file
+  - Import OK ✅ (LanceDB dependency to be installed separately)
+
+## Next Session TODO
+- [ ] F005: VectorStore Adapter (wrapper for LanceDB)
+- [ ] F006: BM25Store (persistent lexical index)
